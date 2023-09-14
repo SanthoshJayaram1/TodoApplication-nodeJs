@@ -1,5 +1,3 @@
-//
-//const db = require('./config/mongoose')
 const TodoLists = require('../models/todo_list')
 // function for redirecting to main home page
 module.exports.home = function(req,res){
@@ -9,19 +7,16 @@ module.exports.home = function(req,res){
             console.log('error in fetching data');
             return
         }
-        
         return res.render('homePage',{
             title:"Home",
-            todoList:todo
-           
+            todoList:todo   
         })
     })
 }
 // function for new Data
 function DateValeu(dueDate){
-    let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','nov','dec'] // static value for implementing monthe value
-
-
+    // static value for implementing monthe value
+    let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','nov','dec'] 
     newdate = '';
     let monapp = '';
     // checking months 
